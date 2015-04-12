@@ -1,5 +1,5 @@
 <?php
-	require("config.php");
+      require("config.php");
       require("mysql_connect.php");
 	function getNewPicId($openid,$picInfo){
 		$query = new mysql_data(PIC_CON_URL,PIC_CON_USER,PIC_CON_PASSWD);

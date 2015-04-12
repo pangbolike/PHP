@@ -1,6 +1,7 @@
 <?php
 	/*
 	* @author:pangbolike
+	* @date:2015.04.12
 	* for pic server define
 	*/
 	define("FACE_DATABASE","picserver");

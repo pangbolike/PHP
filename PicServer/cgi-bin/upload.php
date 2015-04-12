@@ -1,4 +1,9 @@
 <?php
+	/*
+	* @author:pangbolike
+	* @date:2015.04.12
+	* pic upload cgi
+	*/
 	require("utils.php");
 	if (!CheckParams(array("openid","pic_name")))
 	{
@@ -6,9 +11,9 @@
 		return ;
 	}
 	/*
-	 *check right modules here
-	 *
-	*/
+    *check right modules here
+    *
+    */
 
 	$tp = array("image/pjpeg","image/jpeg","image/png","image/bmp");
 	$extArray = array(".jpg",".jpg",".png",".bmp");

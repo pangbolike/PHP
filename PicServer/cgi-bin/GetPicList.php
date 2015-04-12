@@ -1,4 +1,9 @@
 <?php
+    /*
+    * @author:pangbolike
+    * @date:2015.04.12
+    * cgi for get user's pic info list
+    */
 	require("utils.php");
 	if (!CheckParams(array("openid")))
 	{
@@ -6,8 +11,8 @@
 		return ;
 	}
 	/*
-     *check right modules here
-     *
+    *check right modules here
+    *
     */
 
 	$query = new mysql_data(PIC_CON_URL,PIC_CON_USER,PIC_CON_PASSWD);

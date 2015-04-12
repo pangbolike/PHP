@@ -1,14 +1,22 @@
 <?php
+      /*
+      * @author:pangbolike
+      * @date:2015.04.12
+      * for pic server utils
+      */
       require("config.php");
       require("mysql_connect.php");
 	function getNewPicId($openid,$picInfo){
 		$query = new mysql_data(PIC_CON_URL,PIC_CON_USER,PIC_CON_PASSWD);
       	$query->select_db(FACE_DATABASE);
       	$time = (int)time();
+            //check if the user can upload now
       	$sql = sprintf("select pic_id from %s where openid = '%s' and upload_time > %d"
       			,FACE_INFO_TABLE,$openid,$time - PIC_DELAY_TIME);
       	if (count($query->query($sql)) != 0)
       		return -1;
+            //
+
       	$sql = sprintf("insert into %s values(null,'%s','%s','%d')"
       			,FACE_INFO_TABLE,$openid,$picInfo,$time);
       	if (!$query->execute($sql))

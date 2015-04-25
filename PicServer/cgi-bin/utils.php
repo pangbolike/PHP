@@ -6,6 +6,11 @@
       */
       require("config.php");
       require("mysql_connect.php");
+      function addCallBack($fun,$str)
+      {
+            if (!$fun || $fun == "") return $str;
+            return $fun."(".$str.")";
+      }
 	function getNewPicId($openid,$picInfo){
 		$query = new mysql_data(PIC_CON_URL,PIC_CON_USER,PIC_CON_PASSWD);
       	$query->select_db(FACE_DATABASE);
